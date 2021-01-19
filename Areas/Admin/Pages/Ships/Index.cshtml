@@ -1,0 +1,40 @@
+@page
+@model Colonize.Areas.Admin.Pages.Ships.IndexModel
+
+
+
+<div class="row">
+    <div class="col">
+<h1>Ships</h1>
+
+    </div>
+
+  <a href="/Admin/Ships/New"><div class="col btn btn-primary">Add</div></a>
+</div>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Passanger Capacity</th>
+      <th scope="col">Drive</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var item in Model.Ships) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PassengerCapacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Drive)
+            </td>
+       
+        </tr>
+    }
+  </tbody>
+</table>

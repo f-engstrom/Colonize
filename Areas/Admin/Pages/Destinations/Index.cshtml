@@ -1,0 +1,42 @@
+@page
+
+<h1>Destinations</h1>
+
+@model Colonize.Areas.Admin.Pages.Destinations.IndexModel
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Destination</th>
+      <th scope="col">Departure at</th>
+      <th scope="col">Arrival at</th>
+      <th scope="col">Ship</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var item in Model.Voyages) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Destination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartureAt)
+            </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.ArrivalAt)
+            </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.Ship)
+            </td>
+       
+        </tr>
+    }
+  </tbody>
+</table>

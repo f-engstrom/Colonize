@@ -1,0 +1,43 @@
+@page
+@model FleetModel
+
+@{
+    ViewData["Title"] = "Fleet";
+}
+    <h4>Ships</h4>
+
+@foreach (var ship in Model.Ships) 
+{
+
+<div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="@Html.DisplayFor(Model => ship.ImageUrl)" alt="">
+
+  <div class="card-body">
+    <h5 class="card-title"> @Html.DisplayFor(model => ship.Name)</h5>
+    <p class="card-text"> @Html.DisplayFor(model => ship.Description).</p>
+  </div>
+  <ul class="list-group list-group-flush">
+
+    
+     <li class="list-group-item">
+         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => ship.PassengerCapacity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => ship.PassengerCapacity)
+        </dd></li>
+    
+     <li class="list-group-item">
+         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => ship.Drive)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => ship.Drive)
+        </dd></li>
+    
+  </ul>
+  
+  </div>
+
+
+}

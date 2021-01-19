@@ -1,0 +1,25 @@
+@page "{id}"
+@model VoyageModel
+
+
+
+
+
+<h1>@Model.Voyage.Name </h1>
+
+@Model.Voyage.Description 
+@Model.Voyage.Destination 
+@Model.Voyage.DepartureAt 
+@Model.Voyage.ArrivalAt 
+@Model.Voyage.Ship.Name 
+
+@foreach(var passenger in Model.Voyage.Passengers)
+{
+
+              @Html.DisplayFor(model => passenger.FirstName)
+             @Html.DisplayFor(model =>  passenger.LastName)
+    
+ 
+
+
+}
